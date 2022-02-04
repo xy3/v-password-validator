@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-Simple password validator using raw entropy values, written in [V](https://vlang.io/).
+    Simple password validator using raw entropy values, written in <a href="https://vlang.io/">V</a>.
 </p>
 
 
