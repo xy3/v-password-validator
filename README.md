@@ -28,5 +28,7 @@ fn main(){
 
 It's up to you. That said, here is a graph that shows some common timings for different values, somewhere in the 50-70 range seems "reasonable".
 
+![brute force diagram](https://blog.braincoke.fr/assets/images/security/password_entropy_small.png)
+
 Keep in mind that attackers likely aren't just brute-forcing passwords, if you want protection against common passwords or [PWNed passwords](https://haveibeenpwned.com/) you'll need to do additional work. This library is lightweight, doesn't load large datasets, and doesn't contact external services.
 
