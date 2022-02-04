@@ -1,3 +1,5 @@
+module passwordvalidator
+
 import math
 
 const (

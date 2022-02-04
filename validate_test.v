@@ -1,4 +1,4 @@
-module v_password_validator
+module passwordvalidator
 
 import math
 
