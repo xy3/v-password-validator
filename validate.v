@@ -100,22 +100,8 @@ fn log_pow(exp_base f64, pow int, log_base f64) f64 {
 	return total
 }
 
-// get_entropy returns the entropy in bits for the given password
-pub fn get_entropy(password string) f64 {
-	base := get_base(password)
-	length := get_length(password)
-
-	// calculate log2(base^length)
-	return log_pow(f64(base), length, 2)
-}
-
-pub fn validate(password string, min_entropy f64) ? {
-	entropy := get_entropy(password)
-	if entropy >= min_entropy {
-		return
-	}
-
-	mut messages := []string{}
+fn get_error_message(password string) string {
+		mut messages := []string{}
 
 	if !password.contains_any(sep_chars) || !password.contains_any(replace_chars)
 		|| !password.contains_any(other_special_chars) {
@@ -132,8 +118,25 @@ pub fn validate(password string, min_entropy f64) ? {
 	}
 
 	if messages.len > 0 {
-		return error('insecure password, try ' + messages.join(', ') + ' or using a longer password')
+		return 'insecure password, try ' + messages.join(', ') + ' or using a longer password'
 	}
 
-	return error('insecure password, try using a longer password')
+	return 'insecure password, try using a longer password'
+}
+
+// get_entropy returns the entropy in bits for the given password
+pub fn get_entropy(password string) f64 {
+	base := get_base(password)
+	length := get_length(password)
+
+	// calculate log2(base^length)
+	return log_pow(f64(base), length, 2)
+}
+
+pub fn validate(password string, min_entropy f64) ? {
+	entropy := get_entropy(password)
+	if entropy >= min_entropy {
+		return
+	}
+	return error(get_error_message(password))
 }
