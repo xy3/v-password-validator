@@ -12,11 +12,11 @@ Heavily influenced by [go-password-validator](https://github.com/wagslane/go-pas
 import xy3.passwordvalidator
 
 fn main(){
-    entropy := passwordvalidator.GetEntropy("a longer password")
+    entropy := passwordvalidator.get_entropy("a longer password")
     // entropy is a f64, representing the strength in base 2 (bits)
 
     min_entropy_bits := 60
-    passwordvalidator.Validate("some password", min_entropy_bits) or { panic(err) }
+    passwordvalidator.validate("some password", min_entropy_bits) or { panic(err) }
     // if the password has enough entropy, nothing is returned
     // otherwise, a formatted error message is provided explaining
     // how to increase the strength of the password

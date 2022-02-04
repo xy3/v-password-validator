@@ -85,15 +85,6 @@ fn get_base(password string) int {
 	return seqs.keys().join('').len + base
 }
 
-// get_entropy returns the entropy in bits for the given password
-pub fn get_entropy(password string) f64 {
-	base := get_base(password)
-	length := get_length(password)
-
-	// calculate log2(base^length)
-	return log_pow(f64(base), length, 2)
-}
-
 fn log_x(base f64, n f64) f64 {
 	if base == 0 {
 		return 0
@@ -107,6 +98,15 @@ fn log_pow(exp_base f64, pow int, log_base f64) f64 {
 		total += log_x(log_base, exp_base)
 	}
 	return total
+}
+
+// get_entropy returns the entropy in bits for the given password
+pub fn get_entropy(password string) f64 {
+	base := get_base(password)
+	length := get_length(password)
+
+	// calculate log2(base^length)
+	return log_pow(f64(base), length, 2)
 }
 
 pub fn validate(password string, min_entropy f64) ? {
