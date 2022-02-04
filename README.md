@@ -1,10 +1,47 @@
-# v-password-validator
+<div align="center">
+<h1>:space_invader: v-password-validator</h1>
+</div>
 
+<p align="center">
 Simple password validator using raw entropy values, written in [V](https://vlang.io/).
+</p>
 
 ---
 
 Heavily influenced by [go-password-validator](https://github.com/wagslane/go-password-validator)
+
+## Installation:
+
+Install using `vpkg`
+
+```bash
+vpkg get https://github.com/xy3/v-password-validator
+```
+
+**Not on vpm yet, but when it is:**
+
+Install using `V`'s builtin `vpm`:
+
+```bash
+v install xy3.v-password-validator
+```
+
+Install using `git`:
+
+```bash
+cd path/to/your/project
+git clone https://github.com/xy3/v-password-validator
+```
+
+Then in the wherever you want to use it:
+
+```v
+import xy3.passwordvalidator
+```
+
+And that's it!
+
+## Usage
 
 ## 🚀 Quick Start
 
