@@ -6,6 +6,11 @@
 Simple password validator using raw entropy values, written in [V](https://vlang.io/).
 </p>
 
+
+<p align="center">
+⭐ If you like this project please give it a star! ⭐
+</p>
+
 ---
 
 Heavily influenced by [go-password-validator](https://github.com/wagslane/go-password-validator)
