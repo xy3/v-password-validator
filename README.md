@@ -20,7 +20,7 @@ Heavily influenced by [go-password-validator](https://github.com/wagslane/go-pas
 Install using `V`'s builtin `vpm`:
 
 ```bash
-v install xy3.v-passvalid
+v install xy3.passvalid
 ```
 
 Install using `git`:
