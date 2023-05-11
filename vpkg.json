@@ -1,8 +1,0 @@
-{
-  "name": "passwordvalidator",
-  "version": "0.1.0",
-  "author": ["xy3 <a@xsq.pw>"],
-  "repo": "https://github.com/xy3/v-password-validator",
-  "sources": ["https://v-pkg.github.io/registry/"],
-  "dependencies": []
-}

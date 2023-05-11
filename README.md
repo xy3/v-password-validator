@@ -1,5 +1,5 @@
 <div align="center">
-<h1>:space_invader: v-password-validator</h1>
+<h1>:space_invader: V password validator</h1>
 </div>
 
 <p align="center">
@@ -17,18 +17,10 @@ Heavily influenced by [go-password-validator](https://github.com/wagslane/go-pas
 
 ## Installation:
 
-Install using `vpkg`
-
-```bash
-vpkg get https://github.com/xy3/v-password-validator
-```
-
-**Not on vpm yet, but when it is:**
-
 Install using `V`'s builtin `vpm`:
 
 ```bash
-v install xy3.v-password-validator
+v install xy3.v-passvalid
 ```
 
 Install using `git`:
@@ -41,7 +33,7 @@ git clone https://github.com/xy3/v-password-validator
 Then in the wherever you want to use it:
 
 ```v
-import xy3.passwordvalidator
+import xy3.passvalid
 ```
 
 And that's it!
@@ -51,14 +43,14 @@ And that's it!
 ## 🚀 Quick Start
 
 ```v
-import xy3.passwordvalidator
+import xy3.passvalid
 
 fn main(){
-    entropy := passwordvalidator.get_entropy("a longer password")
+    entropy := passvalid.get_entropy("a longer password")
     // entropy is a f64, representing the strength in base 2 (bits)
 
     min_entropy_bits := 60
-    passwordvalidator.validate("some password", min_entropy_bits) or { panic(err) }
+    passvalid.validate("some password", min_entropy_bits) or { panic(err) }
     // if the password has enough entropy, nothing is returned
     // otherwise, a formatted error message is provided explaining
     // how to increase the strength of the password
